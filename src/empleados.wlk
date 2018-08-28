@@ -12,11 +12,16 @@ object gimenez {
 		sueldo = nuevoValor
 	}
 	method totalCobrado() {
-		total += sueldo
+		return total
+	}
+	method cobrarSueldo() { 
+		total += sueldo 
 	}
 }
 
 object baigorria {
+	
+	var total= 0
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
 	
@@ -26,8 +31,15 @@ object baigorria {
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
 
-}
+	
+	method totalCobrado() {
+		return total
+	}
+	method cobrarSueldo() { 
+	//	total += sueldo() 
+	}
 
+}
 object galvan {
 	var dinero = 300000
 	method dinero() { 
@@ -35,6 +47,6 @@ object galvan {
 	}
 	method pagarA( empleado ) { 
 		dinero -= empleado.sueldo()
-		empleado.totalCobrado()
+		empleado.cobrarSueldo()
 	}
 }

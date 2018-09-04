@@ -21,25 +21,48 @@ object gimenez {
 
 object baigorria {
 	
-	var total= 0
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
+	var property totalDeuda = 0
+	var totalDinero = 0
 	
+	method gasta(monto){
+		totalDeuda += monto
+		totalDinero -= monto
+		}
 	method venderEmpanada() {
 		cantidadEmpanadasVendidas += 1
 	}
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
 
-	
-	method totalCobrado() {
-		return total
+	method saldarDeuda(){
+		if(totalDeuda > 0  ){
+			
+		}
 	}
+	method totalCobrado() {
+		 totalDinero += self.sueldo()
+		 totalDeuda -= self.sueldo()
+		 }
+	
 	method cobrarSueldo() { 
-	//	total += sueldo() 
+	//	total += sueldo()
+		totalDinero += self.sueldo() 
+		totalDinero += self.sueldo()
+		totalDeuda -= self.sueldo()
 	}
 
 }
+/*1.Baigorria arranca con 15000 de sueldo, deuda en 0, dinero en 0.
+2.Baigorria gasta 4000,  totalDeuda()  debe ser 4000,  totalDinero()  debe ser 0.
+3.Baigorria gasta otros 8000,  totalDeuda()  pasa a 12000,  totalDinero()  sigue en 0.
+4.Baigorria cobra, con los 15000 que recibe paga toda su deuda y le sobran 3000 pesos. Por lo tanto,  totalDeuda()  debe ser 0, y  totalDinero()  debe ser 3000.
+5.Baigorria gasta 25000, cubre 3000 con el dinero que tiene, el resto es deuda.  totalDeuda()  queda en 22000,  totalDinero()  en 0.
+6.Baigorria cobra, tiene que dedicar los 15000 a pagar deudas, y no le alcanza. Ahora,  totalDeuda()  pasa a 7000, y  totalDinero()  a 0.
+ */
+
+
 object galvan {
 	var dinero = 300000
 	method dinero() { 

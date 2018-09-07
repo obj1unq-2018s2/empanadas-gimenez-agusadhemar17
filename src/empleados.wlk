@@ -27,6 +27,8 @@ object baigorria {
 	var totalDinero = 0
 	
 	method gasta(monto){
+		// TODO No respeta el enunciado.
+		// No está teniendo en cuenta los casos en los que el dinero no alcanza para pagar el monto.
 		totalDeuda += monto
 		totalDinero -= monto
 		}
@@ -38,16 +40,19 @@ object baigorria {
 
 	method saldarDeuda(){
 		if(totalDeuda > 0  ){
-			
+		// TODO Incompleto	
 		}
 	}
 	method totalCobrado() {
+		// TODO Debería ser una pregunta y en cambio es una orden.
 		 totalDinero += self.sueldo()
 		 totalDeuda -= self.sueldo()
 		 }
 	
 	method cobrarSueldo() { 
 	//	total += sueldo()
+	
+		// TODO ¿Por qué cobra el sueldo dos veces?
 		totalDinero += self.sueldo() 
 		totalDinero += self.sueldo()
 		totalDeuda -= self.sueldo()
